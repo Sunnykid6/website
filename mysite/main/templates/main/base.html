@@ -1,0 +1,33 @@
+<!--
+  extends makes it so that it follows into the header html file
+  which is the template for everything.
+
+  block content makes it so whatever is in that sections is transfered 
+  into the block content of that template file.
+-->
+
+{% extends 'main/header.html' %}
+
+{% block content %}
+
+<html>
+    <head>
+        <title>Django - Photo Gallery</title>
+        <!-- CSS -->
+        <link rel="stylesheet" href="{% static 'photo/css/style.css' %}">
+        <link rel="stylesheet" href="{% static 'photo/css/simplelightbox.min.css' %}">
+
+        <!-- JAVASCRIPT -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+        <script type="text/javascript" src="{% static 'photo/js/simple-lightbox.min.js' %}"></script>
+    </head>
+    <body>
+        <div class='container'>
+            <div class="gallery">
+                {% block body %}{% endblock body %}
+            </div>
+        </div>
+        {% block extra_js %}{% endblock extra_js %}
+    </body>
+</html>
+{% endblock %}

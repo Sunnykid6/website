@@ -1,0 +1,79 @@
+<!--
+  exnteds makes it so that it follows into the header html file
+  which is the template for everything.
+
+  block content makes it so whatever is in that sections is transfered 
+  into the block content of that template file.
+
+  loading static makes it so whatever is in that file I can use it 
+  such as the images or other css materials
+-->
+
+{% extends 'main/header.html' %}
+{% load static %}
+
+{% block content %}
+	<div class="center">
+		<h1 class="w3-margin w3-jumbo" style="padding-top: 50px;"><strong>Victor Sun</strong> </h1>
+		<img src="{% static 'main/img/profile.jpg' %}" width="200" height="200">
+	</div>
+
+	<hr class="class-2" style="text-align: center; margin-left: auto; margin-right: auto; width: 50%;"/>
+	<p style="text-align: center; margin-left: auto; margin-right: auto; width: 50%; font-size: 20px;">
+            3rd Year Software Engineering Student @ UVIC<br>
+            <i><font size="3">Aspiring Unity Game Creator/Designer and Digital Artist</font></i><br>
+			<a href="https://drive.google.com/file/d/1Ibe1le497Bt0adYsSnNM6GWglWTy4KdN/view?usp=sharing" target="_blank" style="font-size: 22px">Resume </a>
+    </p>
+
+	<h2 style="text-align: center;">Interests</h2>
+	<hr class="class-1" /> 
+	<div class="row">
+	    <div class="col-sm-6">
+			<button type="button" class="collapsibleButton">Drawing and Streaming</button>
+			<div class="content">
+			  <p>I draw in my free time, mostly anime-styled characters. I've been trying to get better future endevours in game dev. On occasion I will stream the process on twitch, feel free to come in and chat!</p>
+			</div>
+			<button type="button" class="collapsibleButton">Machine Learning and Artificial Intelligence</button>
+			<div class="content">
+			  <p>I've been an intrigued by the possibilities that AI and Machine learning can bring. Although I'm currently not researching or studying, I would love the opportunity to learn or work on a project. For one class, we used VEX robotics to create an autonomous cable linking robot which was really fun to create with my team.</p>
+			</div>
+			<button type="button" class="collapsibleButton">Cooking and Baking</button>
+			<div class="content">
+			  <p>Growing up my dad would make dinner every night for my family. As I got older, my dad would teach me recipes bit by bit. It was great bonding time and I found that cooking and baking were very relaxing. Every now and then I'll try making something new and post it on my instagram.</p>
+			</div>
+		</div>
+		<div class="col-sm-6">
+			<button type="button" class="collapsibleButton">Video Games</button>
+			<div class="content">
+			  <p>I love to play games with my friends whenever we're all free. We used to play Smash Bros and MMORPGS More recently, I've been playing indie-typed games such as Enter the Gungeon, Lost Castle, and Death Road to Canada. </p>
+			</div>
+			<button type="button" class="collapsibleButton">Game Development</button>
+			<div class="content">
+			  <p>Following many Game Development channels on youtube and taking courses in high school, I have the urge to create. Currently, my friends and I have decided on building upon the classic tetris game with multiplayer and RPG aspects. In the future, I would like to produce a dungeon crawler or bullet hell. </p>
+			</div>
+			<button type="button" class="collapsibleButton">Anime</button>
+			<div class="content">
+			  <p>Anime was a form of down time and relaxation time for me growing up. I also have an addicitive personality so whenever an episode ended on a cliffhanger, I would want to continue watching. I think my years of watching anime drove me to try drawing in that style. It even got me looking at animation tutorials and appreciating animation as an art form.</p>
+			</div>
+		</div>
+	</div>
+
+
+<script>
+var coll = document.getElementsByClassName("collapsibleButton");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("activeButton");
+    var content = this.nextElementSibling;
+    if (content.style.display === "block") {
+      content.style.display = "none";
+    } else {
+      content.style.display = "block";
+    }
+  });
+}
+</script>
+
+{% endblock %}

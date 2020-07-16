@@ -1,0 +1,49 @@
+<!--
+  going to be honest, I don't quite know what all these stylesheets are for
+  I know that the materialize one is the main css i'm using
+
+  however, some of the other things are for misc stuff such as the icons
+  for social media.
+-->
+
+<head>
+  {% load static %}
+  <link href="{% static 'tinymce/css/prism.css' %}" rel="stylesheet">
+  <!-- Compiled and minified CSS -->
+  <link href="{% static 'main/css/test.css' %}" rel="stylesheet">
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!--<link href="{% static 'main/css/header.css' %}" rel="stylesheet"> -->
+
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+  <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+  
+            
+</head>
+
+<body>
+
+  {% include "main/includes/navbar.html" %}
+  {% include "main/includes/messages.html" %}
+  
+  <div class="container">
+    <br>
+    {% block content %}
+    {% endblock %}
+  </div>
+
+  {% include "main/includes/footer.html" %}
+</body>
+
+<script src="{% static 'tinymce/js/prism.js' %}"></script>
+<script>M.AutoInit();</script>
+
+<script>
+  $(document).ready(function(){
+    $('.sidenav').sidenav();
+  });
+</script>

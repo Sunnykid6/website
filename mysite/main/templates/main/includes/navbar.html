@@ -1,0 +1,46 @@
+{% load static %}
+<nav>
+  <div class="nav-wrapper" id="myHeader">
+      <a href="#" class="sidenav-trigger" data-target="mobile-nav">
+      <i class="material-icons">menu</i>
+      </a>
+
+    <ul id="nav-mobile" class="right hide-on-med-and-down">
+      <li><a href="/">Home</a></li>
+      <li><a href="/projects">Projects</a></li>
+      <li><a href="/gallery">Gallery</a></li>
+      <li><a href="/contact">Contact Me</a></li>
+      <!--
+      {% if user.is_authenticated %}
+        <li><a href="/account">{{user.username}}</a></li>
+        <li><a href="/logout">Logout</a></li>
+      {% else %}
+        <li><a href="/register">Register</a></li>
+        <li><a href="/login">Login</a></li>
+      {% endif %}
+      -->
+    </ul>
+  </div>
+</nav>
+
+<ul class="sidenav" id="mobile-nav">
+  <li><a href="/">Home</a></li>
+  <li><a href="/projects">Projects</a></li>
+  <li><a href="/contact">Contact Me</a></li>
+  <li><a href="/gallery">Gallery</a></li>
+</ul>
+
+<script>
+window.onscroll = function() {myFunction()};
+
+var header = document.getElementById("myHeader");
+var sticky = header.offsetTop;
+
+function myFunction() {
+  if (window.pageYOffset > sticky) {
+    header.classList.add("sticky");
+  } else {
+    header.classList.remove("sticky");
+  }
+}
+</script>

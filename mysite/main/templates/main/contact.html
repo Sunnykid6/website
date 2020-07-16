@@ -1,0 +1,34 @@
+<!--
+  extends makes it so that it follows into the header html file
+  which is the template for everything.
+
+  block content makes it so whatever is in that sections is transfered 
+  into the block content of that template file.
+-->
+
+{% extends 'main/header.html' %}
+{% load static %}
+
+{% block content %}
+  <div class="infoPage" style="padding-top: 50px; text-align: center; margin-left: auto; margin-right: auto;">
+    <h1 style="text-align: center; margin-left: auto; margin-right: auto; width: 50%;"> Contact Me </h1>
+    <hr class="class-1" />
+    <p style="text-align: center; margin-left: auto; margin-right: auto; font-size: 20px">
+      My resume is linked below. You can email me with any inquiries, suggestions, or ideas. My email is: sun.victor99@gmail.com
+    </p>
+    <a href="https://drive.google.com/file/d/1Ibe1le497Bt0adYsSnNM6GWglWTy4KdN/view?usp=sharing" target="_blank" style="font-size: 32px"> Resume </a>
+    <p style="font-size: 20px">
+      Otherwise, you can also reach me by clicking any of the footer icons which will bring you to its respective social platform or by
+      clicking the links below.
+    </p>
+    <div class="infoPage2" style="font-size: 32px">
+      <a href="https://www.instagram.com/sunnykid99/" target="_blank" class="icoInstagram" title="Instagram"> Instagram </a>
+      <br>
+      <a href="https://twitter.com/Sunnykid99/" target="_blank" class="icoTwitter" title="Twitter"> Twitter </a>
+      <br>
+      <a href="https://github.com/Sunnykid6/" target="_blank" class="icoGithub" title="GitHub"> Github </a>
+      <br>
+      <a href="https://www.linkedin.com/in/victor-sun-a53877186/" target="_blank" class="icoLinkedin" title="Linkedin"> Linkedin</a>
+    </div>
+  </div>
+{% endblock %}`
